@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'comp1',
+  name: 'Comp1',
   data() {
     return {
       msg: 'this is comp1!'

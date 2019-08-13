@@ -1,24 +1,23 @@
 <template>
   <div id="app">
-    <hello-world/>
-    <comp1/>
-    <router-view></router-view>
+    <layout></layout>
   </div>
 </template>
 <script>
-
+import Layout from '@/views/layout'
 export default {
+  components: {Layout},
   name: 'app'
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+#app
+  font-family 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  text-align center
+  color #2c3e50
+  background #fee
+  padding 20px
 </style>
