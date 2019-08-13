@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <div class="hello">{{ msg }}</div>
   </div>
 </template>
 
@@ -17,3 +17,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.hello
+  text-align center
+</style>
