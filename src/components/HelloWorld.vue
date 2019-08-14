@@ -13,7 +13,6 @@ export default {
     }
   },
   created () {
-    console.log(this.$api.user.getUser())
   }
 }
 </script>

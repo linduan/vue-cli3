@@ -15,6 +15,15 @@ export default {
       msg: 'this is page one!'
     }
   },
+  created () {
+    this.$api.user.getUser({prod: 'pc_his'}).then(res => {
+      alert('http request success!')
+      console.log(res)
+    }).catch(e => {
+      alert('http request fail!')
+      console.log(e)
+    })
+  },
   methods: {
     getMsg () {}
   }
