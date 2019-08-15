@@ -24,8 +24,16 @@ export default [
     }
   },
   {
+    path: '/PageTwo',
+    name: 'PageTwo',
+    component: ()=>import('@/views/pageTwo'),
+    meta: {
+      nav: 'pageTwo'
+    }
+  },
+  {
     path: '*',
-    name: '404',
+    name: 'MissingPage',
     component: ()=>import('@/views/404'),
     meta: {
       nav: '404'

@@ -1,31 +1,36 @@
 <template>
   <div class="page-one">
     <div>this is pageOne</div>
-    <hello-world></hello-world>
+    <div class="btns">
+      <button @click="sendGet">发送Get请求</button>
+      <button @click="sendPost">发送Post请求</button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/helloWorld'
 export default {
   name: 'PageOne',
-  components: {HelloWorld},
   data () {
     return {
       msg: 'this is page one!'
     }
   },
-  created () {
-    this.$api.user.getUser({prod: 'pc_his'}).then(res => {
-      alert('http request success!')
-      console.log(res)
-    }).catch(e => {
-      alert('http request fail!')
-      console.log(e)
-    })
-  },
   methods: {
-    getMsg () {}
+    sendGet () {
+      this.$api.user.sendGet({ key: 'get', arr: [1, 2], obj: {key1: 'val1', key2: 'val2'} }).then(res => {
+        console.log('http get request success!', res)
+      }).catch(e => {
+        console.log('http post request fail!', e)
+      })
+    },
+    sendPost () {
+      this.$api.user.sendPost({key: 'post', arr: [3, 4], obj: {key1: 'val1', key2: 'val2'} }).then(res => {
+        console.log('http get request success!', res)
+      }).catch(e => {
+        console.log('http post request fail!', e)
+      })
+    }
   }
 }
 </script>
@@ -34,4 +39,8 @@ export default {
   .page-one
     font-size 18px
     color #333
+  .btns
+    text-align left
+    button
+      margin-right 20px
 </style>

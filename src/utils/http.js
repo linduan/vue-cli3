@@ -21,7 +21,6 @@ axio.interceptors.request.use(config => {
     config.data || (config.data = {})
     Object.assign(config.data, {ticket})
   }
-
   return config
 }, error => Promise.reject(error))
 
@@ -59,26 +58,27 @@ function requestHandle (params) {
 }
 
 // 将url, params={key: val} 转化为 url?key=val的形式
+// axios的params处理包含数组的键值对时存在问题：{key: [val, val2]}
 function toQueryString (url = '', params = {}) {
   let keys = Object.keys(params)
   if (!keys.length) return url
-  let query = keys.map(key => `${key}=${params[key]}`).join('&')
+  let query = keys.map(key => key + '=' + params[key]).join('&')
   url += url.includes('?') ? query : '?' + query
   return url
 }
 
 export default {
-  post (url, params) {
+  post (url, data) {
     return requestHandle({
-        url,
-        methods: 'post',
-        data: params
+      url,
+      data,
+      methods: 'post'
     })
   },
   get (url, params) {
     return requestHandle({
-      methods: 'get',
-      url: toQueryString(url, params)
+      url: toQueryString(url, params),
+      methods: 'get'
     })
   }
 }

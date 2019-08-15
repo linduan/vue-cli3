@@ -1,6 +1,12 @@
 <template>
   <div class="layout">
     <nav>{{nav}}</nav>
+    <div class="nav-link">
+      <router-link :to="{name: 'Comp1'}">Comp1</router-link>
+      <router-link :to="{name: 'PageOne'}">PageOne</router-link>
+      <router-link :to="{name: 'PageTwo'}">PageTwo</router-link>
+      <router-link :to="{name: 'MissingPage'}">404</router-link>
+    </div>
     <router-view class="content"></router-view>
   </div>
 </template>
@@ -29,7 +35,14 @@ export default {
       text-align left
       font-weight bold
       background #eee
-      padding 20px
+      heigth 30px
+      line-height 30px
+      padding-left 20px
+    .nav-link
+      text-align left
+      padding 10px
+      a
+        margin-right 20px
     .content
       margin-top 10px
       background #eef
