@@ -26,7 +26,7 @@ npm run lint
 ```
 ### 基于vue cli3手脚架搭建
 ### master/dev包含一般项目处理方案，包括api处理，组件自动注册，路由自动注册等项目配置
-### ts分支是支持typescript处理的分支
+### ts分支是支持typescript处理的分支（待补充）
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
