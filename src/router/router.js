@@ -32,12 +32,12 @@ export default [
     }
   },
   {
-    path: '*',
+    path: '/404',
     name: 'MissingPage',
     component: ()=>import('@/views/404'),
     meta: {
-      nav: '404'
+      nav: 'MissingPage'
     }
-  }
-  
+  },
+  { path: '*', redirect: '/404' }
 ]

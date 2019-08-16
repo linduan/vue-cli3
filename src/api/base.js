@@ -1,5 +1,8 @@
 // 此处需要配置对应接口nodeApi标志
 const nodeApi = process.NODE_API || 'dev'
+console.log(process)
+console.log(process.env.NODE_ENV)
+console.log(process.env.VUE_APP_API)
 const api = {
   apiV1: {
     dev: 'https://www.baidu.com/sugrec/',
