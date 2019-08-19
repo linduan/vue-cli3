@@ -62,7 +62,7 @@ function requestHandle (params) {
 function toQueryString (url = '', params = {}) {
   let keys = Object.keys(params)
   if (!keys.length) return url
-  let query = keys.map(key => key + '=' + params[key]).join('&')
+  let query = keys.map(key => key + '=' + JSON.stringify(params[key]) ).join('&')
   url += url.includes('?') ? query : '?' + query
   return url
 }
