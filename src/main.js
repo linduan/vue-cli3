@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from '@/router/index'
 import Components from "@/components/index"
 import $api from '@/api'
+import store from '@/store/index'
 
 // 组件
 Components.forEach(item => {
@@ -14,6 +15,7 @@ Vue.prototype.$api = $api
 Vue.config.productionTip = false
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
 
