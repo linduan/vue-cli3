@@ -2,7 +2,7 @@ export default [
   {
     path: '/helloWorld',
     name: 'HelloWorld',
-    component: ()=>import('@/components/helloWorld'),
+    component: ()=>import('@/components/HelloWorld'),
     meta: {
       nav: 'HelloWorld'
     }
